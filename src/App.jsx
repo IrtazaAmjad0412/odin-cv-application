@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { CvInfoForm } from "./components/CvInfo/CvInfoForm";
+
+const formDataFields = [
+  { name: "fullName", label: "Name", type: "text", form: "personal" },
+  { name: "email", label: "Email", type: "email", form: "personal" },
+  { name: "phoneNumber", label: "Phone Number", type: "tel", form: "personal" },
+  { name: "schoolName", label: "School", type: "text", form: "education" },
+  { name: "titleOfStudy", label: "Title of Study", type: "text", form: "education" },
+  { name: "dateOfStudy", label: "Date of Study", type: "date", form: "education" },
+  { name: "companyName", label: "Company Name", type: "text", form: "work" },
+  { name: "positionTitle", label: "Position Title", type: "text", form: "work" },
+  {
+    name: "mainResponsibilities",
+    label: "Main Responsibilities",
+    type: "text",
+    form: "work",
+  },
+  { name: "startDate", label: "Start Date", type: "date", form: "work" },
+  { name: "endDate", label: "End Date", type: "date", form: "work" },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <CvInfoForm
+        formDataFields={formDataFields.filter((field) => field.form === "personal")}
+      />
+      <CvInfoForm
+        formDataFields={formDataFields.filter((field) => field.form === "education")}
+      />
+      <CvInfoForm
+        formDataFields={formDataFields.filter((field) => field.form === "work")}
+      />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
