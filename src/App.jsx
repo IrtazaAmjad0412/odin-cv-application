@@ -1,15 +1,27 @@
+import { useState } from "react";
 import { CvInfoForm } from "./components/CvInfo/CvInfoForm";
-import { formData } from "./data/formData";
-import { sectionData } from "./data/sectionData";
+import { CvInfoFormBtns } from "./components/CvInfoFormBtns/CvInfoFormBtns";
+import { formDataFields, formSectionData, formDataButtons } from "./data/formData";
 import { capitalizeFirstLetter } from "./data/utils";
 
 function App() {
+  const initialFormData = Object.fromEntries(
+    formDataFields.map((field) => [field.name, ""])
+  );
+
+  const [formData, setFormData] = useState(initialFormData);
+
   return (
     <>
-      {sectionData.map((section) => (
+      <CvInfoFormBtns buttons={formDataButtons} />
+      {formSectionData.map((section) => (
         <div key={section} className="cv-section">
           <h2>{capitalizeFirstLetter(section)}</h2>
-          <CvInfoForm fields={formData.filter((field) => field.form === section)} />
+          <CvInfoForm
+            fields={formDataFields.filter((field) => field.form === section)}
+            formData={formData}
+            setFormData={setFormData}
+          />
         </div>
       ))}
     </>

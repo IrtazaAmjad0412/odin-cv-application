@@ -1,15 +1,10 @@
-import { useState } from "react";
 import "./CvInfoForm.css";
 
-export const CvInfoForm = ({ fields }) => {
-  const initialFormData = Object.fromEntries(fields.map((field) => [field.name, ""]));
-
-  const [formData, setFormData] = useState(initialFormData);
-
+export const CvInfoForm = ({ fields, formData, setFormData }) => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    setFormData(initialFormData);
+    setFormData(formData);
   };
 
   const handleOnChange = (e) => {
@@ -20,7 +15,7 @@ export const CvInfoForm = ({ fields }) => {
   return (
     <form className="cv-info-form" onSubmit={handleOnSubmit}>
       {fields.map(({ name, label, type }) => (
-        <div key={name}>
+        <div key={name} className="input-group">
           <label htmlFor={name}>{label}: </label>
           {type === "textarea" ? (
             <textarea
@@ -40,7 +35,6 @@ export const CvInfoForm = ({ fields }) => {
           )}
         </div>
       ))}
-      <input type="submit" />
     </form>
   );
 };

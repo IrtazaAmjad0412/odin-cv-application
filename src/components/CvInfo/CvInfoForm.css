@@ -10,7 +10,7 @@ body {
   background-color: #1e1e1e;
   padding: 2rem;
   border-radius: 10px;
-  margin: 3rem;
+  margin: 3rem 4rem;
   max-width: 600px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
@@ -28,19 +28,16 @@ body {
   gap: 1rem;
 }
 
-.cv-info-form div {
+.cv-info-form .input-group {
   display: flex;
   flex-direction: column;
-  flex: 1 1 calc(50% - 0.5rem);
+  flex: 0 0 calc(50% - 0.5rem);
   min-width: 200px;
 }
 
-.cv-info-form div textarea {
-  width: 100%;
-}
-
-.cv-info-form div:has(textarea) {
-  flex: 1 1 100%;
+.cv-info-form .input-group:has(textarea) {
+  flex: 0 0 100%;
+  resize: vertical;
 }
 
 .cv-info-form label {
@@ -68,7 +65,17 @@ body {
   outline: none;
 }
 
-.cv-info-form input[type="submit"] {
+.cv-info-form-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  position: sticky;
+  top: 2rem;
+  z-index: 10;
+}
+
+.cv-info-form-btns input[type="submit"],
+.cv-info-form-btns input[type="button"] {
   background-color: #4da6ff;
   color: #fff;
   border: none;
@@ -77,15 +84,10 @@ body {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s ease, transform 0.1s ease;
-  margin-top: 1rem;
 }
 
-.cv-info-form input[type="submit"]:hover {
+.cv-info-form-btns input[type="submit"]:hover,
+.cv-info-form-btns input[type="button"]:hover {
   background-color: #3399ff;
   transform: translateY(-2px);
-}
-
-.cv-info-form textarea {
-  resize: vertical;
-  min-height: 70px;
 }
