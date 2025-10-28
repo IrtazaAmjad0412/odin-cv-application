@@ -23,11 +23,17 @@ export const CvInfoForm = ({ fields }) => {
         <div key={name}>
           <label htmlFor={name}>{label}: </label>
           {type === "textarea" ? (
-            <textarea name={name} value={formData[name]} onChange={handleOnChange} />
+            <textarea
+              id={name}
+              name={name}
+              value={formData[name]}
+              onChange={handleOnChange}
+            />
           ) : (
             <input
-              type={type}
+              id={name}
               name={name}
+              type={type}
               value={formData[name]}
               onChange={handleOnChange}
             />
