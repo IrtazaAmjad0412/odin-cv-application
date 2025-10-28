@@ -5,8 +5,8 @@ export const formData = [
   { name: "address", label: "Address", type: "text", form: "personal" },
   { name: "schoolName", label: "School", type: "text", form: "education" },
   { name: "titleOfStudy", label: "Title of Study", type: "text", form: "education" },
-  { name: "startDate", label: "Start Date", type: "date", form: "education" },
-  { name: "endDate", label: "End Date", type: "date", form: "education" },
+  { name: "educationStartDate", label: "Start Date", type: "date", form: "education" },
+  { name: "educationEndDate", label: "End Date", type: "date", form: "education" },
   { name: "companyName", label: "Company Name", type: "text", form: "experience" },
   { name: "positionTitle", label: "Position Title", type: "text", form: "experience" },
   {
@@ -15,6 +15,6 @@ export const formData = [
     type: "textarea",
     form: "experience",
   },
-  { name: "startDate", label: "Start Date", type: "date", form: "experience" },
-  { name: "endDate", label: "End Date", type: "date", form: "experience" },
+  { name: "experienceStartDate", label: "Start Date", type: "date", form: "experience" },
+  { name: "experienceEndDate", label: "End Date", type: "date", form: "experience" },
 ];
