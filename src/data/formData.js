@@ -1,4 +1,4 @@
-export const formData = [
+export const formDataFields = [
   { name: "fullName", label: "Full Name", type: "text", form: "personal" },
   { name: "email", label: "Email", type: "email", form: "personal" },
   { name: "phoneNumber", label: "Phone Number", type: "tel", form: "personal" },
@@ -17,4 +17,11 @@ export const formData = [
   },
   { name: "experienceStartDate", label: "Start Date", type: "date", form: "experience" },
   { name: "experienceEndDate", label: "End Date", type: "date", form: "experience" },
+];
+
+export const formSectionData = ["personal", "education", "experience"];
+
+export const formDataButtons = [
+  { type: "submit", value: "Save" },
+  { type: "button", value: "Edit" },
 ];
