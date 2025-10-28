@@ -1,9 +1,8 @@
 import { useState } from "react";
+import "./CvInfoForm.css";
 
-export const CvInfoForm = ({ formDataFields }) => {
-  const initialFormData = Object.fromEntries(
-    formDataFields.map((field) => [field.name, ""])
-  );
+export const CvInfoForm = ({ fields }) => {
+  const initialFormData = Object.fromEntries(fields.map((field) => [field.name, ""]));
 
   const [formData, setFormData] = useState(initialFormData);
 
@@ -19,21 +18,23 @@ export const CvInfoForm = ({ formDataFields }) => {
   };
 
   return (
-    <div>
-      <form className="cv-info-form" onSubmit={handleOnSubmit}>
-        {formDataFields.map(({ name, label, type }) => (
-          <div key={name}>
-            <label htmlFor={name}>{label}: </label>
+    <form className="cv-info-form" onSubmit={handleOnSubmit}>
+      {fields.map(({ name, label, type }) => (
+        <div key={name}>
+          <label htmlFor={name}>{label}: </label>
+          {type === "textarea" ? (
+            <textarea name={name} value={formData[name]} onChange={handleOnChange} />
+          ) : (
             <input
               type={type}
               name={name}
               value={formData[name]}
               onChange={handleOnChange}
             />
-          </div>
-        ))}
-        <input type="submit" />
-      </form>
-    </div>
+          )}
+        </div>
+      ))}
+      <input type="submit" />
+    </form>
   );
 };

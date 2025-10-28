@@ -1,0 +1,76 @@
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.cv-section {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 3rem 5rem;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cv-section h2 {
+  margin-bottom: 1rem;
+  color: #4da6ff;
+  border-bottom: 2px solid #4da6ff;
+  padding-bottom: 0.5rem;
+}
+
+.cv-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cv-info-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-info-form label {
+  margin-bottom: 0.3rem;
+  color: #b0b0b0;
+  font-weight: 500;
+}
+
+.cv-info-form input,
+.cv-info-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cv-info-form input:focus,
+.cv-info-form textarea:focus {
+  border-color: #4da6ff;
+  box-shadow: 0 0 5px #4da6ff;
+  outline: none;
+}
+
+.cv-info-form input[type="submit"] {
+  background-color: #4da6ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.cv-info-form input[type="submit"]:hover {
+  background-color: #3399ff;
+  transform: translateY(-2px);
+}
+
+.cv-info-form textarea {
+  resize: vertical;
+  min-height: 70px;
+}
