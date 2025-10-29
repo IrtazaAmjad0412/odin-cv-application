@@ -19,10 +19,16 @@ function App() {
     setFormData(initialFormData);
   };
 
+  const handleEdit = () => {
+    if (submittedFormData) {
+      setFormData(submittedFormData);
+    }
+  };
+
   return (
     <>
       <form onSubmit={handleOnSubmit}>
-        <CvInfoFormBtns buttons={formDataButtons} />
+        <CvInfoFormBtns buttons={formDataButtons} onEdit={handleEdit} />
         {formSectionData.map((section) => (
           <div key={section} className="cv-section">
             <h2>{capitalizeFirstLetter(section)}</h2>
