@@ -69,8 +69,11 @@ body {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  position: sticky;
-  top: 2rem;
+  position: fixed;
+  top: 10%;
+  right: 50%;
+  transform: translateY(-50%);
+  transform: translateX(50%);
   z-index: 10;
 }
 
