@@ -1,5 +1,5 @@
 import { formDataFields, formSectionData } from "../../data/formData";
-import { capitalizeFirstLetter } from "../../data/utils";
+import { capitalizeFirstLetter, formatDate } from "../../data/utils";
 import "./DisplayCv.css";
 
 export const DisplayCv = ({ submittedFormData }) => {
@@ -16,6 +16,13 @@ export const DisplayCv = ({ submittedFormData }) => {
                 return (
                   <p key={name} className="cv-textarea">
                     <strong>{label}:</strong> {value}
+                  </p>
+                );
+              }
+              if (type === "date") {
+                return (
+                  <p key={name} className="cv-field">
+                    <strong>{label}:</strong> {formatDate(value)}
                   </p>
                 );
               }
