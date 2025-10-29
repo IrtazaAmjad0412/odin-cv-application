@@ -2,7 +2,7 @@ import { formDataFields, formSectionData } from "../../data/formData";
 import { capitalizeFirstLetter } from "../../data/utils";
 import "./DisplayCv.css";
 
-export const DisplayCv = ({ formData }) => {
+export const DisplayCv = ({ submittedFormData }) => {
   return (
     <div className="display-cv">
       {formSectionData.map((section) => {
@@ -11,7 +11,7 @@ export const DisplayCv = ({ formData }) => {
           <section key={section} className="cv-section-display">
             <h2>{capitalizeFirstLetter(section)}</h2>
             {fields.map(({ name, type, label }) => {
-              const value = formData[name];
+              const value = submittedFormData[name];
               if (type === "textarea") {
                 return (
                   <p key={name} className="cv-textarea">

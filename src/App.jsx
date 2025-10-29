@@ -11,11 +11,12 @@ function App() {
   );
 
   const [formData, setFormData] = useState(initialFormData);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedFormData, setSubmittedFormData] = useState(null);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setSubmittedFormData(formData);
+    setFormData(initialFormData);
   };
 
   return (
@@ -33,7 +34,7 @@ function App() {
           </div>
         ))}
       </form>
-      {isSubmitted && <DisplayCv formData={formData} />}
+      {submittedFormData && <DisplayCv submittedFormData={submittedFormData} />}
     </>
   );
 }
